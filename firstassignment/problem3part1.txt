@@ -1,0 +1,106 @@
+Memory, CPU, and Disk Info
+MemTotal:        1007644 kB
+MemFree:          643040 kB
+MemAvailable:     767296 kB
+Buffers:           29920 kB
+Cached:           208932 kB
+SwapCached:            0 kB
+Active:           145952 kB
+Inactive:         139168 kB
+Active(anon):      46840 kB
+Inactive(anon):      168 kB
+Active(file):      99112 kB
+Inactive(file):   139000 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                84 kB
+Writeback:             0 kB
+AnonPages:         46272 kB
+Mapped:            61620 kB
+Shmem:               744 kB
+Slab:              54440 kB
+SReclaimable:      27428 kB
+SUnreclaim:        27012 kB
+KernelStack:        2032 kB
+PageTables:         4020 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      503820 kB
+Committed_AS:     344888 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       63488 kB
+DirectMap2M:      985088 kB
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 63
+model name	: Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+stepping	: 2
+microcode	: 0x43
+cpu MHz		: 2400.087
+cache size	: 30720 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 4800.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+Filesystem     1K-blocks    Used Available Use% Mounted on
+udev              491656       0    491656   0% /dev
+tmpfs             100768     744    100024   1% /run
+/dev/xvda1       8065444 1617396   6431664  21% /
+tmpfs             503820       0    503820   0% /dev/shm
+tmpfs               5120       0      5120   0% /run/lock
+tmpfs             503820       0    503820   0% /sys/fs/cgroup
+/dev/loop0         90624   90624         0 100% /snap/core/7270
+/dev/loop1         91264   91264         0 100% /snap/core/7713
+/dev/loop2         18432   18432         0 100% /snap/amazon-ssm-agent/1455
+tmpfs             100764       0    100764   0% /run/user/1000
+Common Log Path files
+alternatives.log
+auth.log
+auth.log.1
+btmp
+cloud-init-output.log
+cloud-init.log
+dpkg.log
+kern.log
+kern.log.1
+lastlog
+syslog
+syslog.1
+syslog.2.gz
+tallylog
+wtmp
+New Session entries
+Sep 22 18:48:29 ip-10-0-0-138 systemd-logind[972]: New session 71 of user ubuntu.
+Sep 22 18:49:08 ip-10-0-0-138 systemd-logind[885]: New session 71 of user ubuntu.
+Sep 22 18:50:43 ip-10-0-0-138 systemd-logind[808]: New session 1 of user ubuntu.
