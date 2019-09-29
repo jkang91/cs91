@@ -25,12 +25,12 @@ yum update && yum upgrade -y
 # Install Apache Web Server
 yum install httpd -y
 
-# SSH-Forwarding Agnet
-eval 'ssh-agent'
-
 # Create an index.html file
 echo "E91_Jason" > /var/www/html/index.html
 
 # Start and Enable Apache Web Server
 systemctl start httpd
 systemctl enable httpd
+
+# SSH-Forwarding Agent
+eval 'ssh-agent'
