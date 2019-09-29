@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Create user e91testuser
+useradd e91testuser --create-home --shell /bin/bash
+
+# As a root user, create .ssh folder for e91 user
+mkdir /home/e91testuser/.ssh
+
+# Insert the public key
+echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaFBle099KmeTysY77gtMmc//t/y4T5QvDQ4IobPMTUItsSnoFsC17155zAtMZiFWoHNId2FQk22ZMCAO+UoV7mXfM5lwILsGjj26NIT6FGseFiWAbZgcihl/Z1Lp3zgygf8kZnXY4FrD3mL/ykoHAH09I1bitu9CsBZ8MAENBY+SBaUqyHCKHRZigcSlmEXIyERLJdnOKwNhtiJS0lNozPW7DyDFaRJ1XSzwbladfut8zGYcXV5us4ofBJX5flr8dPBVWd/HQbWBoFni858UCvZLivJ+phpr1JZdCWgwbw3SslH7fj+t3bvsSvJUz8JeE+8/U9iNrgEGHWKa28Ibj' > /home/e91testuser/.ssh/authorized_keys
+
+# Change the ownership of /home/e91user/.ssh
+chown -R e91testuser.e91testuser /home/e91testuser/.ssh
+
+# Change the permission of the folder and the file
+chmod 700 /home/e91testuser/.ssh
+chmod 600 /home/e91testuser/.ssh/authorized_keys
+
+# Add e91testuser to the suoders users to have the permission to be root
+echo "e91testuser  ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/e91testuser
+
+# Update OS
+yum update && yum upgrade -y
+
+# Install Apache Web Server
+yum install httpd -y
+
+# Create an index.html file
+echo "E91_Jason" > /var/www/html/index.html
+
+# Start and Enable Apache Web Server
+systemctl start httpd
+systemctl enable httpd

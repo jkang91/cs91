@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Create user e91user
+useradd e91user --create-home --shell /bin/bash
+
+# As a root user, create .ssh folder for e91user
+mkdir /home/e91user/.ssh
+
+# Insert the public key
+echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC60rCTYzWNayyBzDaGfurLhCq5n1gqMc6MdPVkEobTTcf/aCb/EEGowqVmWg6xuD1o0biASsljK62cr+S00OYFgi1hKIVycyaTRsp2I7C5CTpfhh+ylGLHHJXk05dilz/YF6PcsmK3Rbh8NFS/s3qaeRkCcFgXa7zZV/3tjmSb+mCW673m2MJfJueT5+OIHVV6BMjzuM84TunX9ayUmMudXqQ7K/G2+bFueuaTa9lwER3618w+SQWx0FGuE9bDv1iqFpVfWXF2pd/4z+CK/j2S4ABAZ0MlZd+zMxHBm4G03mbKCuZ8mnj8v0kN41rg+3+AzMwGNiE2nx+TEZTsrJXX' > /home/e91user/.ssh/authorized_keys
+
+# Change the ownership of /home/e91user/.ssh
+chown -R e91user.e91user /home/e91user/.ssh
+
+# Change the permission of the folder and the file
+chmod 700 /home/e91user/.ssh
+chmod 600 /home/e91user/.ssh/authorized_keys
+
+# Add e91user to the suoders users to have the permission to be root
+echo "e91user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/e91user
+
+# Update OS
+yum update && yum upgrade -y
+
+# SSH-Forwarding Agent
+eval 'ssh-agent'
